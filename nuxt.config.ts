@@ -11,12 +11,22 @@ export default defineNuxtConfig({
           name: "description",
           content: "ElementPlus + Nuxt3",
         },
+        {
+          name: "description",
+          content:
+            "OPPO专区，官方正品，最新最全的OPPO手机产品以及配件在线抢购！",
+        },
+        {
+          name: "keywords",
+          content: "OPPO商城，OPPO专区, OPPO手机，OPPO配件，OPPO, OPPO官网商城",
+        },
       ],
       link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }],
+      noscript: [{ children: "Javascript is required" }],
     },
   },
   // css
-  css: ["~/assets/scss/index.scss"],
+  css: ["normalize.css", "~/assets/scss/index.scss"],
   typescript: {
     strict: true,
     shim: false,
@@ -43,7 +53,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: `@use "@/assets/scss/element/index.scss" as element;`,
+          additionalData: '@use "~/assets/scss/variables.scss" as *;',
         },
       },
     },
