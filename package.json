@@ -3,6 +3,13 @@
   "private": true,
   "version": "1.0.1",
   "type": "module",
+  "description": "Element Plus with Nuxt 3 快速启动项目",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/element-plus/element-plus-nuxt-starter"
+  },
+  "author": "xiaogeng",
+  "license": "MIT",
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
@@ -13,13 +20,21 @@
     "commit": "git-cz"
   },
   "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.7.0",
     "nuxt": "^3.11.2",
+    "pinia": "^2.1.7",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },
   "devDependencies": {
+    "@element-plus/nuxt": "^1.0.8",
+    "@nuxtjs/color-mode": "^3.4.0",
+    "@pinia/nuxt": "^0.5.1",
+    "@unocss/nuxt": "^0.59.3",
     "git-cz": "^4.9.0",
-    "husky": "^9.0.11"
+    "husky": "^9.0.11",
+    "scss": "^0.2.4"
   },
   "config": {
     "commitizen": {
