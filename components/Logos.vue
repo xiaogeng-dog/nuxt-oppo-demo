@@ -1,5 +1,4 @@
-<script setup lang="ts">
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="display-logo" flex="~" gap-2 items-center>
@@ -17,7 +16,7 @@
   </h2>
 </template>
 
-<style>
+<style scoped>
 .display-logo {
   display: flex;
   justify-content: center;

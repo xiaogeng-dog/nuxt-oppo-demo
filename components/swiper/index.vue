@@ -1,32 +1,36 @@
 <script setup lang="ts">
-import { IBanner } from '~/types/home';
+import type { IBanner } from "~/types/home";
 
 interface IProps {
-  listData: IBanner[]
+  listData: IBanner[];
 }
 withDefaults(defineProps<IProps>(), {
-  listData: () => []
-})
+  listData: () => [],
+});
 
-const currentindex = ref<number>(0)
+const currentindex = ref<number>(0);
 const onCarouselChange = (index: number) => {
-  currentindex.value = index
-}
+  currentindex.value = index;
+};
 </script>
 
 <template>
   <div class="swiper">
     <div class="wrapper content">
-      <el-carousel height="480px" indicator-position="none" @change="onCarouselChange">
+      <el-carousel
+        height="480px"
+        indicator-position="none"
+        @change="onCarouselChange"
+      >
         <el-carousel-item v-for="(item, index) of listData" :key="index">
-          <img class="pic-str" :src="item.picStr" alt="轮播图">
+          <img class="pic-str" :src="item.picStr" alt="轮播图" />
         </el-carousel-item>
       </el-carousel>
     </div>
 
     <!-- 指示器 -->
     <ul class="dots">
-      <template v-for="item, index of listData" :key="index">
+      <template v-for="(item, index) of listData" :key="index">
         <li :class="['dot', { active: currentindex === index }]"></li>
       </template>
     </ul>

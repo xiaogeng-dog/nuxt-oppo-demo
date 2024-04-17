@@ -1,9 +1,11 @@
-import type { AsyncData, UseFetchOptions } from 'nuxt/app'
+import type { AsyncData, UseFetchOptions } from "nuxt/app";
+// const runtimeConfig = useRuntimeConfig()
+// const BASE_URL = runtimeConfig.baseURL +"/api";
+const BASE_URL = "http://codercba.com:9060/oppo-nuxt/api";
 
-const BASE_URL = 'http://codercba.com:9060/oppo-nuxt/api'
-type Method = 'GET' | 'POST'
+type Method = "GET" | "POST";
 
-class ZtRequest {
+class Request {
   request<T = any>(
     url: string,
     method: Method,
@@ -14,32 +16,32 @@ class ZtRequest {
       const newOption: UseFetchOptions<T> = {
         baseURL: BASE_URL,
         method,
-        ...options
-      }
+        ...options,
+      };
 
-      if (method === 'GET') {
-        newOption.query = data
-      } else if (method === 'POST') {
-        newOption.body = data
+      if (method === "GET") {
+        newOption.query = data;
+      } else if (method === "POST") {
+        newOption.body = data;
       }
 
       useFetch<T>(url, newOption as any)
-        .then(res => {
-          resolve(res as AsyncData<T, Error>)
+        .then((res) => {
+          resolve(res as AsyncData<T, Error>);
         })
-        .catch(err => {
-          reject(err)
-        })
-    })
+        .catch((err) => {
+          reject(err);
+        });
+    });
   }
 
   get<T = any>(url: string, param?: any, options?: UseFetchOptions<T>) {
-    return this.request(url, 'GET', param, options)
+    return this.request(url, "GET", param, options);
   }
 
   post<T = any>(url: string, data?: any, options?: UseFetchOptions<T>) {
-    return this.request(url, 'POST', data, options)
+    return this.request(url, "POST", data, options);
   }
 }
 
-export default new ZtRequest()
+export default new Request();

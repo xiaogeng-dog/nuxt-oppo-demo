@@ -4,12 +4,15 @@ body,
   margin: 0;
   padding: 0;
   font-size: $fontSize14;
-  color: #333;
 }
 
 html.dark {
   background: #222;
   color: white;
+}
+html.light {
+  background-color: $bgGrayColor;
+  color: #333;
 }
 
 ul {

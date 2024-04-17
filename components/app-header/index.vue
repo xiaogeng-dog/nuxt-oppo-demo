@@ -21,7 +21,7 @@
             <div class="name">下载 OPPO 商城 App</div>
           </div>
         </nuxt-link>
-        <nuxt-link to="/login" class="link" target="_blank">
+        <nuxt-link to="/login" class="link">
           <i class="iconfont icon-user"></i>
           <span>登录</span>
         </nuxt-link>

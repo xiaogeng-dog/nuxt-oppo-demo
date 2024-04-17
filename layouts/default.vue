@@ -1,12 +1,3 @@
-<script setup lang="ts">
-import { storeToRefs } from "pinia";
-import { useHomeStore } from "~/stores/home";
-
-const homeStore = useHomeStore();
-homeStore.fetchHomeInfoData("oppo");
-const { navbars } = storeToRefs(homeStore);
-</script>
-
 <template>
   <div class="default-layout">
     <!-- header -->
@@ -18,5 +9,14 @@ const { navbars } = storeToRefs(homeStore);
     <app-footer></app-footer>
   </div>
 </template>
+
+<script setup lang="ts">
+import { storeToRefs } from "pinia";
+import { useHomeStore } from "~/stores/home";
+
+const homeStore = useHomeStore();
+homeStore.fetchHomeInfoData("oppo");
+const { navbars } = storeToRefs(homeStore);
+</script>
 
 <style scoped lang="scss"></style>

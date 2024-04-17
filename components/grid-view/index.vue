@@ -1,23 +1,22 @@
 <script setup lang="ts">
-import { IProductDetailss } from '~/types/home'
+import type { IProductDetailss } from "~/types/home";
 
 interface IProps {
-  listData?: IProductDetailss[]
-  picUrl?: string
+  listData?: IProductDetailss[];
+  picUrl?: string;
 }
 
 withDefaults(defineProps<IProps>(), {
   listData: () => [],
-  picUrl: ''
-})
+  picUrl: "",
+});
 </script>
 
 <template>
-  
   <div class="grid-view">
     <!-- 第一个 item -->
     <div class="view-item first" v-if="!!picUrl">
-      <img :src="picUrl" alt="商品图片">
+      <img :src="picUrl" alt="商品图片" />
     </div>
 
     <!-- 其余的 item -->

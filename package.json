@@ -6,7 +6,7 @@
   "description": "Element Plus with Nuxt 3 快速启动项目",
   "repository": {
     "type": "git",
-    "url": "git://github.com/element-plus/element-plus-nuxt-starter"
+    "url": "git://github.com/xiaogeng-dog/nuxt-oppo-demo"
   },
   "author": "xiaogeng",
   "license": "MIT",
