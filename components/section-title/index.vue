@@ -1,17 +1,17 @@
-<script setup lang="ts">
-interface IProps {
-  title: string
-}
-withDefaults(defineProps<IProps>(), {
-  title: ''
-})
-</script>
-
 <template>
   <h1 class="section-title">
     {{ title }}
   </h1>
 </template>
+
+<script setup lang="ts">
+interface IProps {
+  title: string;
+}
+withDefaults(defineProps<IProps>(), {
+  title: "",
+});
+</script>
 
 <style scoped lang="scss">
 .section-title {

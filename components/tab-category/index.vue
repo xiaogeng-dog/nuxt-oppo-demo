@@ -1,32 +1,32 @@
-<script setup lang="ts">
-import type { ICategory } from '~/types/home';
-
-interface IProps {
-  listData: ICategory[]
-}
-withDefaults(defineProps<IProps>(), {
-  listData: () => []
-})
-
-const emits = defineEmits<{
-  (e: 'itemClick', item: ICategory): void
-}>()
-
-const onItemClick = (item: ICategory) => {
-  emits('itemClick', item)
-}
-</script>
-
 <template>
   <div class="tab-category">
-    <template v-for="item, index of listData" :key="index">
+    <template v-for="(item, index) of listData" :key="index">
       <div class="category-item" @click="onItemClick(item)">
-        <img :src="item.picStr" alt="" class="pic-str">
+        <img :src="item.picStr" alt="" class="pic-str" />
         <div class="title">{{ item.title }}</div>
       </div>
     </template>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { ICategory } from "~/types/home";
+
+interface IProps {
+  listData: ICategory[];
+}
+withDefaults(defineProps<IProps>(), {
+  listData: () => [],
+});
+
+const emits = defineEmits<{
+  (e: "itemClick", item: ICategory): void;
+}>();
+
+const onItemClick = (item: ICategory) => {
+  emits("itemClick", item);
+};
+</script>
 
 <style lang="scss" scoped>
 .tab-category {

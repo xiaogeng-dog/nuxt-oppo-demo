@@ -1,19 +1,8 @@
-<script setup lang="ts">
-import type { IProductDetailss } from '~/types/home'
-
-interface IProps {
-  itemData: IProductDetailss | null
-}
-withDefaults(defineProps<IProps>(), {
-  itemData: null
-})
-</script>
-
 <template>
   <div class="grid-view-item" v-if="!!itemData">
     <!-- 产品图片 -->
     <div class="item-img">
-      <img class="url" :src="itemData.url" alt="">
+      <img class="url" :src="itemData.url" alt="" />
     </div>
 
     <!-- 产品标题 -->
@@ -21,7 +10,7 @@ withDefaults(defineProps<IProps>(), {
 
     <!-- 产品标签 -->
     <div class="item-labels">
-      <template v-for="item, index of itemData.activityList" :key="index">
+      <template v-for="(item, index) of itemData.activityList" :key="index">
         <span class="label">{{ item.activityInfo }}</span>
       </template>
     </div>
@@ -34,6 +23,17 @@ withDefaults(defineProps<IProps>(), {
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { IProductDetailss } from "~/types/home";
+
+interface IProps {
+  itemData: IProductDetailss | null;
+}
+withDefaults(defineProps<IProps>(), {
+  itemData: null,
+});
+</script>
 
 <style scoped lang="scss">
 .grid-view-item {

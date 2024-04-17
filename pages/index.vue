@@ -2,18 +2,18 @@
   <div class="home">
     <div class="wrapper content">
       <!-- 轮播图 -->
-      <!-- <Swiper :listData="banners"></Swiper> -->
+      <Swiper :listData="banners"></Swiper>
 
       <!-- 分类 -->
-      <!-- <TabCategory
+      <TabCategory
         :listData="categorys"
         @itemClick="handleTabCategoryItemClick"
-      ></TabCategory> -->
+      ></TabCategory>
 
       <!-- 商品区域-->
-      <!-- <template v-for="item of categorys" :key="item.id">
+      <template v-for="item of categorys" :key="item.id">
         <SectionCategory :itemData="item"></SectionCategory>
-      </template> -->
+      </template>
     </div>
     <div class="page-index">
       <Logos />
@@ -23,21 +23,21 @@
 </template>
 
 <script setup lang="ts">
-// import { useHomeStore } from "~/stores/home";
-// import { storeToRefs } from "pinia";
-// import type { ICategory } from "~/types/home";
+import { useHomeStore } from "~/stores/home";
+import { storeToRefs } from "pinia";
+import type { ICategory } from "~/types/home";
 
-// const homeStore = useHomeStore();
-// const { banners, categorys } = storeToRefs(homeStore);
+const homeStore = useHomeStore();
+const { banners, categorys } = storeToRefs(homeStore);
 
-// const handleTabCategoryItemClick = (item: ICategory) => {
-//   return navigateTo({
-//     path: "/oppo-detail",
-//     query: {
-//       type: item.type,
-//     },
-//   });
-// };
+const handleTabCategoryItemClick = (item: ICategory) => {
+  return navigateTo({
+    path: "/oppo-detail",
+    query: {
+      type: item.type,
+    },
+  });
+};
 </script>
 
 <style>

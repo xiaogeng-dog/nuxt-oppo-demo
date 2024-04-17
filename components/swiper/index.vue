@@ -1,19 +1,3 @@
-<script setup lang="ts">
-import type { IBanner } from "~/types/home";
-
-interface IProps {
-  listData: IBanner[];
-}
-withDefaults(defineProps<IProps>(), {
-  listData: () => [],
-});
-
-const currentindex = ref<number>(0);
-const onCarouselChange = (index: number) => {
-  currentindex.value = index;
-};
-</script>
-
 <template>
   <div class="swiper">
     <div class="wrapper content">
@@ -36,6 +20,22 @@ const onCarouselChange = (index: number) => {
     </ul>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { IBanner } from "~/types/home";
+
+interface IProps {
+  listData: IBanner[];
+}
+withDefaults(defineProps<IProps>(), {
+  listData: () => [],
+});
+
+const currentindex = ref<number>(0);
+const onCarouselChange = (index: number) => {
+  currentindex.value = index;
+};
+</script>
 
 <style scoped lang="scss">
 .swiper {

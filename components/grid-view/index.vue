@@ -1,17 +1,3 @@
-<script setup lang="ts">
-import type { IProductDetailss } from "~/types/home";
-
-interface IProps {
-  listData?: IProductDetailss[];
-  picUrl?: string;
-}
-
-withDefaults(defineProps<IProps>(), {
-  listData: () => [],
-  picUrl: "",
-});
-</script>
-
 <template>
   <div class="grid-view">
     <!-- 第一个 item -->
@@ -27,6 +13,20 @@ withDefaults(defineProps<IProps>(), {
     </template>
   </div>
 </template>
+
+<script setup lang="ts">
+import type { IProductDetailss } from "~/types/home";
+
+interface IProps {
+  listData?: IProductDetailss[];
+  picUrl?: string;
+}
+
+withDefaults(defineProps<IProps>(), {
+  listData: () => [],
+  picUrl: "",
+});
+</script>
 
 <style scoped lang="scss">
 .grid-view {
