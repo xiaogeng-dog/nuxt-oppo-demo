@@ -38,3 +38,13 @@ a {
   width: $contentWidth;
   margin: 0 auto;
 }
+::-webkit-scrollbar {
+  width: $scrollbar-width;
+  height: $fontSize12;
+  background-color: $scrollbar-backgroundColor;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $scrollbar-color;
+  border-radius: $scrollbar-borderRadius;
+}

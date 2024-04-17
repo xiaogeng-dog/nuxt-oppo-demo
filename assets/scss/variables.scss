@@ -33,6 +33,11 @@ $priceColor: #f34141;
 $bgColor: #fff;
 $bgGrayColor: #fafafa;
 
+$scrollbar-width: 6px !default;
+$scrollbar-backgroundColor: #fff !default;
+$scrollbar-borderRadius: 20px !default;
+$scrollbar-color: #d2d2d2 !default;
+
 // 背景精灵图
 @mixin bgSpride() {
   background-image: url("~/assets/images/spride.png");

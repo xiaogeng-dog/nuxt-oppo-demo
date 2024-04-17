@@ -1,42 +1,51 @@
-<script setup lang="ts">
-</script>
-
 <template>
   <div class="app-header">
     <div class="wrapper content">
       <div class="content-left">
-        <NuxtLink to="/" class="link">
+        <nuxt-link to="https://www.oppo.com/cn/" target="_blank" class="link">
           <span>OPPO官网</span>
-        </NuxtLink>
-        <NuxtLink to="" class="link">
+        </nuxt-link>
+        <nuxt-link to="https://www.oneplus.com/cn" target="_blank" class="link">
           <span>一加官网</span>
-        </NuxtLink>
+        </nuxt-link>
       </div>
       <div class="content-right">
-        <NuxtLink to="" class="link download">
+        <nuxt-link
+          to="https://www.oppo.com/cn/download-storeapp/?utm_source=opposhopweb&utm_medium=header"
+          target="_blank"
+          class="link download"
+        >
           <span>下载OPPO商城APP</span>
           <div class="app">
-            <img src="@/assets/images/ecode.png" alt="" class="ecode">
-            <div class="name">扫码下载OPPO商城APP</div>
+            <img src="~/assets/images/ecode.png" class="ecode" alt="gg" />
+            <div class="name">下载 OPPO 商城 App</div>
           </div>
-        </NuxtLink>
-        <NuxtLink to="/login" class="link" target="_blank">
+        </nuxt-link>
+        <nuxt-link to="/login" class="link" target="_blank">
           <i class="iconfont icon-user"></i>
           <span>登录</span>
-        </NuxtLink>
-        <NuxtLink to="/register" class="link">
+        </nuxt-link>
+        <nuxt-link to="/register" class="link">
           <span>注册</span>
-        </NuxtLink>
-        <NuxtLink to="" class="link">
+        </nuxt-link>
+        <nuxt-link to="" class="link">
           <i class="iconfont icon-shoppingcart"></i>
-          <span>购物车</span>
-        </NuxtLink>
+          <span>购物车 </span>
+          <span>(0)</span>
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
-
+<script setup lang="ts">
+// export interface IProps {
+//   title?: string
+// }
+// const props = withDefaults(defineProps<IProps>(), {
+//   title: ''
+// })
+</script>
 <style lang="scss" scoped>
 .app-header {
   background-color: #000;
@@ -45,11 +54,13 @@
   @include elementSticky(0, 110);
 
   .link span {
-    opacity: 0.8; // 字体变暗
+    // opacity: 0.8; // 字体变暗
+    font-family: PingFang SC, Microsoft YaHei, Helvetica Neue, Helvetica, Arial,
+      sans-serif;
   }
 
   .content {
-    /* @include border(red); */
+    /* @include border(green); */
     /* box-sizing: border-box; */
     height: 100%;
     @include normalFlex();
