@@ -26,7 +26,11 @@ export default defineNuxtConfig({
     },
   },
   // css
-  css: ["normalize.css", "~/assets/scss/index.scss"],
+  css: [
+    "normalize.css",
+    "~/assets/scss/index.scss",
+    "~/assets/fonts/cus-font/iconfont.css",
+  ],
   typescript: {
     strict: true,
     shim: false,
