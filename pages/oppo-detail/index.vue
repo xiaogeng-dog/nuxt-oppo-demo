@@ -1,24 +1,3 @@
-<script setup lang="ts">
-import { getDetailInfo } from '@/service/detail'
-import type { IDetailProductType } from '~/types/detail'
-import type { TabsPaneContext } from 'element-plus'
-import { ref } from 'vue'
-
-// 路由：获取请求参数
-const route = useRoute()
-
-// 网络请求：发送网络请求
-const { data } = await getDetailInfo(route.query.type as IDetailProductType)
-
-// 状态：激活的 tab 名称。
-const activeName = ref(data.value?.data[0].title)
-
-// 事件处理：tab 点击事件
-const handleClick = (tab: TabsPaneContext, event: Event) => {
-  // console.log(tab, event)
-}
-</script>
-
 <template>
   <div class="oppo-detail">
     <div class="wrapper content">
@@ -26,12 +5,34 @@ const handleClick = (tab: TabsPaneContext, event: Event) => {
         <template v-for="item of data?.data" :key="item.id">
           <el-tab-pane :label="item.title" :name="item.title">
             <GridView :listData="item.productDetailss"></GridView>
-          </el-tab-pane> 
-        </template>、
+          </el-tab-pane> </template
+        >、
       </el-tabs>
+      <no-more></no-more>
     </div>
   </div>
 </template>
+
+<script setup lang="ts">
+import { getDetailInfo } from "@/service/detail";
+import type { IDetailProductType } from "~/types/detail";
+import type { TabsPaneContext } from "element-plus";
+import { ref } from "vue";
+
+// 路由：获取请求参数
+const route = useRoute();
+
+// 网络请求：发送网络请求
+const { data } = await getDetailInfo(route.query.type as IDetailProductType);
+
+// 状态：激活的 tab 名称。
+const activeName = ref(data.value?.data[0].title);
+
+// 事件处理：tab 点击事件
+const handleClick = (tab: TabsPaneContext, event: Event) => {
+  // console.log(tab, event)
+};
+</script>
 
 <style scoped lang="scss">
 .oppo-detail {
